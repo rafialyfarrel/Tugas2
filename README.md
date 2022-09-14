@@ -7,7 +7,7 @@
 
 ### [Link Aplikasi Heroku](https://bismillahgol.herokuapp.com/katalog/)
 
-#
+![AlurProgram](AlurProgram.jpg)
 
 ## Penjelasan Alur
 
@@ -16,7 +16,7 @@ Tahap pertama dari alur program Tugas 2 ini adalah user/client memberikan reques
 ## Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 Pada mata kuliah PBP ini disarankan untuk menggunakan python sebagai virtual environment. Anggap virtual environment sebagai basis dari sistem operasi yang saya gunakan, jika kita menggunakan basis yang berbeda-beda dalam sebuah project akan menyebabkan project menjadi error/crash. Oleh sebab itu, virtual environment sangat dibutuhkan sebagai wadah untuk memisahkan dari basis yang kita punya.
 
-## Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
+## Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas
 
 ### ```urls.py```
 ```
@@ -68,3 +68,8 @@ Pada ```katalog.html``` menambahkan ```{% for item in list_barang %}``` untuk me
 
 ## ```Deploy```
 Pada template ini, deployment dilakukan dengan memanfaatkan GitHub Actions sebagai runner dan Heroku sebagai platform Hosting aplikasi. Untuk melakukan deployment, kamu dapat melihat instruksi yang ada pada Tutorial 0. Untuk contoh aplikasi Django yang sudah di deploy, dapat di akses pada url ```https://django-pbp-template.herokuapp.com/katalog/```.
+
+## Referensi
+1. https://pbp-fasilkom-ui.github.io/ganjil-2023/assignments/tutorial/tutorial-0
+2. https://pbp-fasilkom-ui.github.io/ganjil-2023/assignments/tutorial/tutorial-1
+3. https://github.com/pbp-fasilkom-ui/assignment-repository
