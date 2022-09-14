@@ -4,7 +4,7 @@ from django.test import TestCase
 from katalog.models import CatalogItem
 
 # Create your tests here.
-class Coba(TestCase):
+class Coba_Run(TestCase):
     def setUp(self):
         CatalogItem.objects.create(
             item_name = "Kacamata",
@@ -31,7 +31,7 @@ class Coba(TestCase):
             item_url = "https://www.tokopedia.com/liga-arloji/casio-mw-240-1evdf-jam-tangan-pria-hitam-balok-hitam?extParam=ivf%3Dfalse"
         )
     
-    def test_if_item_exists(self):
+    def test(self):
         coba1 = CatalogItem.objects.get(item_name = "Kacamata")
         coba2 = CatalogItem.objects.get(item_name = "Topi")
         coba3 = CatalogItem.objects.get(item_name = "Jam Tangan")
