@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 1,
+        "fields": {
+            "watched": "Done",
+            "title": "Thor Ragnarok",
+            "rating": 10,
+            "release_date": "2017-10-25",
+            "review": "Definitely worth seeing."
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 2,
+        "fields": {
+            "watched": "Done",
+            "title": "Thor Love and Thunder",
+            "rating": 9,
+            "release_date": "2022-6-6", 
+            "review": "It was fun to watch. Consistent with other MCU offerings. If you liked the other Thor movies, you will probably like this."
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 3,
+        "fields": {
+            "watched": "Done",
+            "title": "Doctor Strange in the Multiverse of Madness",
+            "rating": 8.5,
+            "release_date": "2022-5-5",
+            "review": "So complicated and very nerve-wracking because playing with the dark magic"
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 4,
+        "fields": {
+            "watched": "Done",
+            "title": "Nanti Kita Cerita Tentang Hari Ini",
+            "rating": 10,
+            "release_date": "2020-1-2",
+            "review": "NKCTHI is a nice package of many people’s relatability, sadness, and happiness—which is indeed what lays in our life."
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 5,
+        "fields": {
+            "watched": "Done",
+            "title": "The Lost City",
+            "rating": 9,
+            "release_date": "2022-3-17",
+            "review" : "A word for this movie is fun."
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 6,
+        "fields": {
+            "watched": "Nope",
+            "title": "Army of Thieves",
+            "rating": 9,
+            "release_date": "2021-10-29",
+            "review": "While the first one was a disappointment cos there were expectations, this one surpassed the expectations in terms of being a very different prequel."
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 7,
+        "fields": {
+            "watched": "Nope",
+            "title": "Army of The Dead",
+            "rating": 8.5,
+            "release_date": "2021-5-21", 
+            "review": "20 minutes in you'll be able to tell if you're with 'Army of the Dead' or not."
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 8,
+        "fields": {
+            "watched": "Done",
+            "title": "Knives Out",
+            "rating": 9,
+            "release_date": "2019-11-27",
+            "review": "Good plot twist and great mystery movie"
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 9,
+        "fields": {
+            "watched": "Done",
+            "title": "La La Land",
+            "rating": 10,
+            "release_date": "2016-12-9",
+            "review": "Very meaningful love story"
+        }
+    },
+    {
+        "model": "mywatchlist.Movies",
+        "pk": 10,
+        "fields": {
+            "watched": "Done",
+            "title": "No Exit",
+            "rating": 9,
+            "release_date": "2022-2-25",
+            "review" : "This movie tempting to say that “No Exit” works best if you turn off your brain."
+        }
+    }
+]
