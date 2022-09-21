@@ -64,6 +64,6 @@ ke dalam database Django lokal.
    Bonus dengan menambahkan pesan sesuai dengan kondisi yang ada, yaitu di saat film yang telah ditonton lebih banyak dibandingkan dengan film yang belum ditonton dan sebaliknya.
 
 ## Referensi
-   1. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjcvLnIwKb6AhUzg2MGHUrwBZsQFnoECAIQAw&url=https%3A%2F        %2Flmsspada.kemdikbud.go.id%2Fmod%2Fpage%2Fview.php%3Fid%3D57743&usg=AOvVaw3ngOkfTASW_pfQVzmul7Mz
+   1. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjcvLnIwKb6AhUzg2MGHUrwBZsQFnoECAIQAw&url=https%3A%2F%2Flmsspada.kemdikbud.go.id%2Fmod%2Fpage%2Fview.php%3Fid%3D57743&usg=AOvVaw3ngOkfTASW_pfQVzmul7Mz
    2. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiasJDvu6b6AhXi4TgGHV14CxUQFnoECAwQAQ&url=https%3A%2F%2Fwww.dicoding.com%2Fblog%2Fapa-itu-json%2F&usg=AOvVaw188YKzUyn7nAHBJ6_rvlrU
    3. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiasJDvu6b6AhXi4TgGHV14CxUQFnoECA0QAQ&url=https%3A%2F%2Fwww.monitorteknologi.com%2Fperbedaan-json-dan-xml%2F&usg=AOvVaw2A6GdV3tAnHqeIZQzmwuWK
