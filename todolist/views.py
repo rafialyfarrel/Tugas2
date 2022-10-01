@@ -17,7 +17,6 @@ def show_todolist(request):
     data_todolist = todolistItem.objects.filter(user=user)
     context = {
     'list_data': data_todolist,
-    'nama': 'Rafialy Farrel',
     'last_login': request.COOKIES['last_login'],
     }
     return render(request, "todolist.html", context)
