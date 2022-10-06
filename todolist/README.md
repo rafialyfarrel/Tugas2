@@ -88,16 +88,16 @@ Kekurangan Internal CSS:
 1. Tidak efisien karena Inline style CSS hanya bisa diterapkan pada satu elemen HTML.
 
 ## 2. Jelaskan tag HTML5 yang kamu ketahui.
-1. <h1> to <h6>     = Tag untuk membuat heading sesuai dengan ukuran darii terbesar ke terkecil
-2. <head>           = Tag untuk mendefisikan kepala dari sebuah halaman
-3. <body>           = Tag untuk membuat tubuh dari sebuah halaman
-4. <!DOCTYPE> 	    = Tag untuk menentukan tipe dokumen
-5. <p> 	            = Tag untuk membuat paragraf
-6. "<br>"	        = Memasukan satu baris putus
-7. <form> 	        = Tag untuk membuat sebuah form HTML untuk input pengguna
-8. <button> 	    = Tag untuk membuat sebuah tombol yang dapat diklik
-9. <nav> 	        = Tag untuk membuat navigasi link
-10. <div> 	        = Tag untuk membuat sebuah bagian dalam dokumen
+1. ```<h1> to <h6>```     = Tag untuk membuat heading sesuai dengan ukuran darii terbesar ke terkecil
+2. ```<head>```           = Tag untuk mendefisikan kepala dari sebuah halaman
+3. ```<body>```           = Tag untuk membuat tubuh dari sebuah halaman
+4. ```<!DOCTYPE>``` 	  = Tag untuk menentukan tipe dokumen
+5. ```<p>``` 	          = Tag untuk membuat paragraf
+6. ```<br>```	          = Memasukan satu baris putus
+7. ```<form>``` 	      = Tag untuk membuat sebuah form HTML untuk input pengguna
+8. ```<button>``` 	      = Tag untuk membuat sebuah tombol yang dapat diklik
+9. ```<nav>``` 	          = Tag untuk membuat navigasi link
+10. ```<div>``` 	      = Tag untuk membuat sebuah bagian dalam dokumen
 11. dan lain-lain masih banyak lagi
     
 ## 3. Jelaskan tipe-tipe CSS selector yang kamu ketahui.
