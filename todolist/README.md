@@ -93,7 +93,7 @@ Kekurangan Internal CSS:
 3. <body>           = Tag untuk membuat tubuh dari sebuah halaman
 4. <!DOCTYPE> 	    = Tag untuk menentukan tipe dokumen
 5. <p> 	            = Tag untuk membuat paragraf
-6. <br> 	        = Memasukan satu baris putus
+6. "<br>"	        = Memasukan satu baris putus
 7. <form> 	        = Tag untuk membuat sebuah form HTML untuk input pengguna
 8. <button> 	    = Tag untuk membuat sebuah tombol yang dapat diklik
 9. <nav> 	        = Tag untuk membuat navigasi link
