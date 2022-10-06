@@ -101,12 +101,12 @@ Kekurangan Internal CSS:
 11. dan lain-lain masih banyak lagi
     
 ## 3. Jelaskan tipe-tipe CSS selector yang kamu ketahui.
-1. .X                 = untuk merubah beberapa objek pada html dengan settingan yang sama
-2. #X                 = semua elemen dalam X
-3. "*"                = semua elemen pada halaman
-4. element(p,h5,dll)  = semua elemen dengan tag html tersebut
-5. :hover             = style css pada elemen akan berubah ketika pointer berada di atas elemen HTML
-6. .<nama class>      = akan menerapkan styling untuk setiap elemen yang memiliki class sesuai nama
+1. ```.X```                 = untuk merubah beberapa objek pada html dengan settingan yang sama
+2. ```#X```                 = semua elemen dalam X
+3. ```*```                  = semua elemen pada halaman
+4. ```element(p,h5,dll)```  = semua elemen dengan tag html tersebut
+5. ```:hover```             = style css pada elemen akan berubah ketika pointer berada di atas elemen HTML
+6. ```.<nama class>```      = akan menerapkan styling untuk setiap elemen yang memiliki class sesuai nama
 7. dan lain-lain masih banyak lagi
 
 ## 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
