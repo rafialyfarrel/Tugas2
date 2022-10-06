@@ -1,45 +1,118 @@
 {% extends 'base.html' %}
-
 {% block meta %}
-<title>Login</title>
 {% endblock meta %}
-
 {% block content %}
 
-<div class = "login">
+<style>
 
-    <h1>Login</h1>
+body {
+  align-items: center;
+  background-color: rgb(91, 1, 174);
+  justify-content: center;
+  display: flex;
+  height: 97vh;
+}
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+.form { 
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 320px;
+}
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+.title{
+  color: #eee;
+  font-family: Tahoma;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900px;
+  margin-top: 30px;
+}
+
+.input_container{
+  height: 60px;
+  position: relative;
+  width: 100%;
+}
+.container_1{
+  margin-top: 35px;
+}
+.container_2{
+  margin-top: 20px;
+}
+
+input, textarea{
+  background-color: #303245;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: 0;
+  color: #eee;
+  font-size: 19px;
+  height: 100%;
+  padding: 0px 19px 0px;
+  width: 100%;
+}
+
+.login{
+  background-color: rgb(129, 0, 221);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  width: 100%;
+}
+.login:active{
+  background-color: rgb(3, 97, 5);
+}
+.login:hover{
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+p{
+    color:rgb(120, 113, 113);
+}
+
+</style>
+
+<body>
+
+<div class="form">
+<div class="title">Welcome</div>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="input_container container_1">
+        <input type="text" name="username" placeholder="Username">
+        <div class="cut"></div>
+      </div>
+      <div class="input_container container_2">
+        <input type="password" name="password" placeholder="Password"></textarea>
+      </div>
+      <button type="text" class="login">login</button>
+</form>
 
     {% if messages %}
         <ul>
             {% for message in messages %}
-                <li>{{ message }}</li>
+                <li style="color: white;">{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+    {% endif %}
+
+    <p>Belum memiliki akun?</p> <a href="{% url 'todolist:register' %}">Buat akun</a>
 
 </div>
+</div>
+
+</body>
 
 {% endblock content %}

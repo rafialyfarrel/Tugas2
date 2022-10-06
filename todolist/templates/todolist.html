@@ -5,56 +5,184 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js%22%3E"></script>
 
-  <style>
-  h5, p {text-align: center; color: rgb(0, 0, 0);}
-  th {text-align: center;}
-  table, th, td {
-    padding: 0px 50px ;
-  border: 1px solid rgb(0, 0, 0);
-  }
-
-  tr {background-color: rgba(120, 69, 46, 0.91);}
-
-  body{
-    color: rgb(255, 255, 255);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .ukuranNama{
-    font-size: 25px;
-  }
-  </style>
-
-  <h5>User: </h5>
-  <div class = "ukuranNama"> 
-  <p>{{user}}</p>
-  </div>
+<style>
   
-  <br>
+:root {
+  --blue: #ec0e8f;
+  --white : #fff;
+  --purple: #6f4faf;
+}
 
-  <div class = "container">   
-  <table>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Date</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% for item in list_data %}
-    <tr>
-        <th>{{item.user}}</th>
-        <th>{{item.title}}</th>
-        <th>{{item.description}}</th>
-        <th>{{item.date}}</th>
-    </tr>
-    {% endfor %}    
-  </table>
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-    <button><a href="{% url 'todolist:createtask' %}">Create Task</a></button>
-    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-  </div> 
+body {
+  font: 16px / 24px "Rubik", Tahoma;
+  color: var(--white);
+  background-color: #15172b;
+  margin: 55px 0px;
+}
+
+h6 {
+  color: rgb(161, 108, 240);
+  font-family: Tahoma;
+  font-size: 16px;
+  text-align: center;
+}
+
+h5 {
+  color: white;
+  font-family: Tahoma;
+  font-size: 16px;
+}
+
+h4 {
+  color: rgb(70, 149, 209);
+  font-family: Tahoma;
+  text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+  font-family: Tahoma;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+a:link {
+  color: var(--white);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--white);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--white);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: flex;
+  padding: 30px 5px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  padding: 20px;
+  background-color: rgb(91, 1, 174);
+  border-radius: 12px;
+  scroll-snap-align: start;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  color: var(--white);
+  background: var(--purple);
+}
+.card .card-title {
+  font-size: 25px;
+}
+.card .card-content {
+  margin: 30px 0;
+  max-width: 85%;
+  font-size: 20px;
+}
+.card:hover .card-link {
+  background: var(--purple);
+}
+.cards::-webkit-scrollbar {
+  height: 12px;
+}
+.cards::-webkit-scrollbar-thumb,
+.cards::-webkit-scrollbar-track {
+  border-radius: 95px;
+}
+.cards::-webkit-scrollbar-track {
+  background: var(--thumb);
+}
+
+@media (min-width: 500px) {
+  .card {
+    flex-basis: calc(50% - 10px);
+  }
+  .card:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .card {
+    flex-basis: calc(calc(100% / 3) - 20px);
+  }
+  .card:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .card {
+    flex-basis: calc(25% - 30px);
+  }
+  .card:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+</style>
+
+  <div class="container">
+    <h2>Hola, <span style="color: var(--blue);">{{ request.user }}</span></h2>
+    <br>
+    <h4 style="font-weight: bold;">Your Tasks:</h4>
+    <ul class="cards">
+      {% for item in list_data %}
+        <li class="card">
+          <div>
+            <h3 class="card-title">{{ item.title }}</h3>
+            <h5 class="card-date">{{ item.date }}</h5>
+              <div class="card-content">
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+      
+  </div>
+
+  <br>
+ 
+  <div class="col-md-12 text-center">
+    <button type="button" class="btn btn-success"><a href="{% url 'todolist:createtask' %}">Create New Task</a></button>
+    <button type="button" class="btn btn-primary"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+  </div>
+    
+  <br>
+  <br>
+  <h6 style="font-size: smaller;">Last login session: {{ last_login }}</h6>
 
  {% endblock content %}
