@@ -154,12 +154,94 @@ a:hover {
 }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+
+<script>
+
+  $(document).ready(() => {
+    console.log("test");
+    getTasks();
+  })
+  
+  function getTasks() {
+    console.log("in getTasks")
+    $.ajax({
+      type: "GET",
+      url: "/todolist/json",
+    }).done((data) => {
+      console.log("about to showTasks")
+      showTasks(data)
+    });
+  }
+
+  function showTasks(data) {
+    console.log("in showTasks");
+    const cards = $('.cards');
+    cards.empty();
+    data.forEach(task => {
+      const card = `
+        <li class="card">
+          <div>
+            <h3 class="card-title">${task.fields.title}</h3>
+            <h6 class="card-date">${task.fields.date}</h6>
+            <h6 style="font-weight: bold; color: black">
+              ${task.fields.is_finished ? "DONE" : "NOT DONE"}
+            </h6>
+            <div class="card-content">
+              <p>${task.fields.description}</p>
+            <div class="card-link-wrapper">
+              <button class="btn btn-success" type="submit" value="Toggle" onclick=toggleTask(${task.pk})><i class="btn-success"></i>Toggle</button>
+              <button class="btn btn-danger" type="submit" value="Delete" onclick=deleteTask(${task.pk})><i class="btn-danger"></i>Delete</button>
+            </div>
+          </div>
+        </li>`;
+      cards.append(card);
+    })
+  }
+
+  function toggleTask(id) {
+    $.ajax({
+      type: "GET",
+      url: "/todolist/toggle-task/" + id,
+      // data: {csrfmiddlewaretoken: '{{ csrf_token }}', pk: id}
+    }).done((data) => {
+      getTasks();
+    })
+  }  
+
+  function deleteTask(id) {
+    $.ajax({
+      type: "GET",
+      url: "/todolist/delete-task/" + id,
+      // data: {csrfmiddlewaretoken: '{{ csrf_token }}', pk: id}
+    }).done((data) => {
+      getTasks();
+    })
+  }
+
+  function addTasks() {
+    // console.log("task?")
+    const form = $('.newtask');
+    $.ajax({
+      type: "POST",
+      url: "/todolist/create-task/",
+      data: form.serialize(),
+    }).done(function (data) {
+      console.log("task?")
+      form.trigger("reset");
+      getTasks();
+    })
+    $("#staticBackdrop").modal("hide");
+  }
+
+</script>
+
   <div class="container">
     <h2>Hola, <span style="color: var(--blue);">{{ request.user }}</span></h2>
     <br>
     <h4 style="font-weight: bold;">Your Tasks:</h4>
     <ul class="cards">
-      {% for item in list_data %}
+      <!-- {% for item in list_data %}
         <li class="card">
           <div>
             <h3 class="card-title">{{ item.title }}</h3>
@@ -169,7 +251,7 @@ a:hover {
             </div>
           </div>
         </li>
-      {% endfor %}
+      {% endfor %} -->
       </ul>
       
   </div>

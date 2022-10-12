@@ -10,6 +10,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+from django.http import HttpResponse
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
@@ -20,6 +22,12 @@ def show_todolist(request):
     'last_login': request.COOKIES['last_login'],
     }
     return render(request, "todolist.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_json(request):
+    user = request.user
+    data_todolist = serializers.serialize("json", todolistItem.objects.filter(user=user))
+    return HttpResponse(data_todolist, content_type="application/json")
 
 def register(request):
     form = UserCreationForm()
