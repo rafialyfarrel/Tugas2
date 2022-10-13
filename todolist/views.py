@@ -77,3 +77,16 @@ def create_task(request):
 
     context = {'form':form}
     return render(request, 'createtask.html', context)
+
+def toggle_task(request, id):
+    data = todolistItem.objects.get(pk = id)
+    data.is_finished = not data.is_finished
+    data.save()
+    response = HttpResponseRedirect(reverse("todolist:show_todolist"))
+    return response
+
+def delete_task(request, id):
+    data = todolistItem.objects.get(pk = id)
+    data.delete()
+    response = HttpResponseRedirect(reverse("todolist:show_todolist"))
+    return response

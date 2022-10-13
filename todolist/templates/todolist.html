@@ -193,7 +193,7 @@ a:hover {
     const form = $('.newtask');
     $.ajax({
       type: "POST",
-      url: "/todolist/createtask/",
+      url: "/todolist/add/",
       data: form.serialize(),
     }).done(function (data) {
       console.log("task?")
