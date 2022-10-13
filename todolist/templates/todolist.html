@@ -193,7 +193,7 @@ a:hover {
     const form = $('.newtask');
     $.ajax({
       type: "POST",
-      url: "/todolist/add/",
+      url: "/todolist/createtask/",
       data: form.serialize(),
     }).done(function (data) {
       console.log("task?")
@@ -204,6 +204,32 @@ a:hover {
   }
 
 </script>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h1 style="font-weight: bold;"class="modal-title fs-5" id="staticBackdropLabel">Create new task</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="task-form">
+        <form class="newtask" id="form">
+          {% csrf_token %}
+          <h6>Task Title:</h6>
+          <input id="title" type="text" name="title" placeholder="Title"></input>
+          <h6>Description:</h6>
+          <textarea id="description" type="text" name="description" placeholder="Description"></textarea>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button id="button" type="submit" class="btn btn-success" onclick=addTasks()>Create new task</button>
+    </div>
+  </div>
+</div>
+</div>
 
   <div class="container">
     <h2>Hola, <span style="color: var(--blue);">{{ request.user }}</span></h2>
@@ -216,7 +242,7 @@ a:hover {
   <br>
  
   <div class="col-md-12 text-center">
-    <button type="button" class="btn btn-success"><a href="{% url 'todolist:createtask' %}">Create New Task</a></button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Create new task </a></button>
     <button type="button" class="btn btn-primary"><a href="{% url 'todolist:logout' %}">Logout</a></button>
   </div>
     
